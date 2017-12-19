@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "361162525684",
+    "firebase_url": "https://z5xconsulting.firebaseio.com",
+    "project_id": "z5xconsulting",
+    "storage_bucket": "z5xconsulting.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361162525684:android:97d3df50c1709ba3",
+        "android_client_info": {
+          "package_name": "z5xconsulting.z5x.com.z5xconsulting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "361162525684-t1091d1bmtk8giiec4qhc878n3oemehf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "z5xconsulting.z5x.com.z5xconsulting",
+            "certificate_hash": "ac55ebcff5f33fbb143676060db015179a2a229e"
+          }
+        },
+        {
+          "client_id": "361162525684-0dj33m4hph1mhfm40g39i99d1c04rpnp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD14NaNaXM5BTBLgkL6Las0fNbR0g0MZuY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "361162525684-0dj33m4hph1mhfm40g39i99d1c04rpnp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
