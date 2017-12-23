@@ -15,6 +15,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.nostra13.universalimageloader.core.ImageLoader;
+
+import z5xconsulting.z5x.com.z5xconsulting.utility.UniversalImageLoader;
 
 /**
  * Created by romvictuelles-z5x on 12/19/17.
@@ -36,43 +39,16 @@ public class SignedInActivity extends AppCompatActivity{
         setContentView(R.layout.activity_signedin);
         Log.d(TAG,"onCreate: started");
         setupFirebaseAuth();
-        getUserDetails();
-       // setUserDetails();
-    }
-    private void setUserDetails(){
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if(user!=null){
-            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                   .setDisplayName("ROm Victuelles")
-                    .setPhotoUri(Uri.parse("http://69.16.231.161/images/sims4-icon.png"))
-                    .build();
-            user.updateProfile(profileUpdates).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    Log.d(TAG,"onComplete: User profile updated");
-                    getUserDetails();
-                }
-            });
-
-        }
+        initImageLoader();
     }
 
-    private void getUserDetails(){
 
-        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
-
-        if(user!=null){
-            String uid=user.getUid();
-            String name=user.getDisplayName();
-            String email=user.getEmail();
-            Uri photoUrl=user.getPhotoUrl();
-
-            String properties = "uid:"+uid+"\n"+
-                    "name:"+name+"\n"+
-                    "email:"+email+"\n"+
-                    "photoUrl:"+photoUrl+"\n";
-            Log.d(TAG,"getUserDetails : properties :\n"+properties);
-        }
+    /**
+     * init universal image loader
+     */
+    private void initImageLoader(){
+        UniversalImageLoader imageLoader = new UniversalImageLoader(SignedInActivity.this);
+        ImageLoader.getInstance().init(imageLoader.getConfig());
     }
 
 
